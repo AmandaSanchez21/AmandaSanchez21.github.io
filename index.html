@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <!-- meta Data -->
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- title -->
+        <title>Amanda Sánchez</title>
+        
+        <!-- stylesheet -->
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/responsive.css" />
+<!--        <link rel="stylesheet" href="css/vertical-nav.css" />-->
+<!--        <link rel="stylesheet" href="css/panel-nav.css" />-->
+        <link rel="stylesheet" href="css/light_template.css" />
+        <link rel="stylesheet" href="css/default-color.css" />
+      	<link rel="stylesheet" href="css/manisa-icon.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+        
+        <!-- Plugins -->
+        <link rel="stylesheet" href="css/lightbox.min.css" />
+        <link rel="stylesheet" href="css/slick.css" />
+        
+        <!-- google Fonts -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Pattaya|Poppins:300,300i,400" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        
+        <script>
+            // Ajax function
+            
+            function _(id) {
+
+                return document.getElementById(id);
+
+            }
+
+            function submitForm() {
+
+                _("btn").disabled = true;
+                _("status").innerHTML = 'please wait ...';
+
+                var formdata = new FormData(),
+                    ajax = new XMLHttpRequest();
+
+                formdata.append("name", _("name").value);
+                formdata.append("email", _("email").value);
+                formdata.append("phone", _("phone").value);
+                formdata.append("msg", _("msg").value);
+
+                ajax.open("POST", "contact.php");
+                ajax.onreadystatechange = function () {
+
+                    if (ajax.readyState === 4 && ajax.status === 200) {
+
+                        if (ajax.responseText === "success") {
+
+                            _("my_form").innerHTML = '<h2>Thanks ' + _("name").value + ',<br> <br> your message has been sent.</h2>';
+
+                        } else {
+
+                            _("status").innerHTML = ajax.responseText;
+                            _("btn").disabled = false;
+
+                        }
+                    }
+                };
+
+                ajax.send(formdata);
+            }
+        </script>
+    </head>
+    <body>
+        
+        <!-- Start Social Media -->
+        
+        <div class="social-media d-none d-md-block">
+            <a href="https://www.facebook.com/amanda.snchzgrc" target="_blank"><i class="fab fa-facebook-f"></i></a> 
+            <a href="https://www.linkedin.com/in/amanda-sanchez-garcia/" target="_blank"><i class="fab fa-linkedin-in"></i></a> 
+            <a href="https://github.com/AmandaSanchez21" target="_blank"><i class="fab fa-github"></i></a> 
+            <a href="#" target="_blank"><i class="fas fa-envelope"></i></a>
+        </div>
+        
+        <!-- End Social Media -->
+        
+        <!-- Start Navbar -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+                
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background: white;">
+                    <div class="menu">
+                        <span class="line1"></span>
+                        <span class="line2"></span>
+                        <span class="line3"></span>
+                    </div>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#header" data-value="header" class="active-nav">
+                            <i class="manisa-home" hidden></i>
+                                <span class="name-menu">Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#about" data-value="about">
+                            <i class="material-icons" hidden>person</i>
+                                <span class="name-menu">Sobre mí</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#serv" data-value="serv">
+                            <i class="manisa-layers" hidden></i>
+                                <span class="name-menu">Servicios</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#portfolio" data-value="portfolio">
+                            <i class="manisa-picture" hidden></i>
+                                <span class="name-menu">Portfolio</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#blog" data-value="blog">
+                            <i class="manisa-note" hidden></i>
+                                <span class="name-menu">Blog</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact" data-value="contact">
+                            <i class="manisa-envelope" hidden></i>
+                                <span class="name-menu">Contacto</span>
+                            </a>
+                        </li>
+                        <li class="nav-item collapse-menu" hidden>
+                            <span class="collapse-icon closed-menu"></span>
+                            <span class="collapse-name">Collapse Menu</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="nav-toggle">
+            <div class="menu">
+                <span class="line1"></span>
+                <span class="line2"></span>
+                <span class="line3"></span>
+            </div>
+        </div>
+        <!-- End Navbar -->
+        
+        
+        <!-- Start Header -->
+        <section id="header" class="header">
+            <div class="overlay"></div>
+            <div class="title">
+                <h1> <span class="pattaya">Amanda Sánchez García</span></h1>
+                <p class="type"></p>  <!-- You Can Edit the title on the custom.js File -->
+               	<nav class="nav_class" style="margin-top: 30px;">
+               		<ul id="social" style="display: -webkit-inline-box;">
+               			<li style="color: white;margin-right: 20px;margin-left: 20px;"><a href="https://www.facebook.com/amanda.snchzgrc" class="fab fa-facebook-f fa-2x" style="color: white; border:none;"><span class="label">Facebook</span></a></li>
+               			<li style="color: white;margin-right: 20px;margin-left: 20px;"><a href="https://www.linkedin.com/in/amanda-sanchez-garcia/" class="fab fa-linkedin-in fa-2x" style="color: white; border:none;"><span class="label">LinkedIn</span></a></li>
+               			<li style="color: white;margin-right: 20px;margin-left: 20px;"><a href="https://github.com/AmandaSanchez21" class="fab fa-github fa-2x" style="color: white; border:none;"><span class="label">Github</span></a></li>
+               			<li style="color: white;margin-right: 20px;margin-left: 20px;"><a href="#" class="fas fa-envelope fa-2x" style="color: white; border:none;"><span class="label">Email</span></a></li>
+               		</ul>
+               	</nav>
+            </div>
+            <div class="down">
+                <a href="#about"><i class="material-icons">mouse</i></a>
+            </div>
+        </section>
+        
+        <!-- End Header -->
+        
+        
+        <!-- Start About -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="title text-center">
+                    <h2 class="text-uppercase">Sobre mí</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-lg text-center">
+                        <div class="about-img"></div> 
+                        <!-- go to main.scss file to edit personal image -->
+                    </div>
+                    <div class="col-md-12 col-lg">
+                        <div class="tabs-about">
+                            <ul class="nav nav-tabs text-center" id="myTab" role="tablist">
+                                
+                                <!-- Start About Me Title Tab -->
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="about-tab" data-toggle="tab" href="#aboutme" role="tab" aria-controls="about" aria-expanded="true">
+                                        <i class="material-icons">person</i>
+                                        <span>Sobre mí</span>
+                                    </a>
+                                </li>
+                                <!-- End About Me Title Tab -->
+                                
+                                <!-- ================ -->
+                                
+                                <!-- Start Profile Title Tab -->
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile">
+                                        <i class="material-icons">star</i>
+                                        <span>Perfil</span>
+                                    </a>
+                                </li>
+                                <!-- End Profile Title Tab -->
+                                
+                                <!-- ================ -->
+                                
+                                <!-- Start Skills Title Tab -->
+                               <!-- <li class="nav-item">
+                                    <a class="nav-link" id="skill-tab" data-toggle="tab" href="#skill" role="tab" aria-controls="skill">
+                                        <i class="material-icons">school</i>
+                                        <span>Education</span>
+                                    </a>
+                                </li>
+                                <!-- End Skills Title Tab -->
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                
+                                <!-- Start About Me Tab -->
+                                <div class="tab-pane fade show active text-left" id="aboutme" role="tabpanel" aria-labelledby="about-tab">
+                                    <p>¡Hola! Soy Amanda Sánchez García y estudio Ingeniería Informática en la Escuela Superior de Informática de Ciudad Real. Esta ha obtenido el sello EURO-INF, otorgado por la European Quality Assurance Network for Informatics Education. </p>
+                                    <p>Actualmente estoy en mi último año de carrera y cabe destacar que cursé la modalidad bilingüe de este grado, además de la intesificación de Tecnologías de la información.</p>
+                                    <p></p>
+                                    <img src="images/signature1.jpg" class="img-fluid signature" alt="signature"/>
+                                    <!-- Here image Signature -->
+                                </div>
+                                <!-- End About Me Tab -->
+                                
+                                <!-- ================ -->
+                                
+                                <!-- Start Profile Tab -->
+                                <div class="tab-pane fade text-left profile" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <h6><span class="title-info">Nombre :</span><span>Amanda Sánchez García</span></h6> <!-- Edit Your Name  -->
+                                    <h6><span class="title-info">Email : </span><span>Amanda.Sanchez@alu.uclm.es</span></h6> <!-- Edit Your Email  -->
+                                    <h6><span class="title-info">Fecha de nacimiento : </span><span>02-09-1997</span></h6> <!-- Edit Your Date Of Birth  -->
+                                    <h6><span class="title-info">Teléfono : </span><span>658 12 20 93</span></h6> <!-- Edit Your Phone -->
+                                    
+                                    <a href="#" class="btn-manisa">Download Resume</a>
+                                </div>
+                                <!-- End Profile Tab -->
+                                
+                                <!-- ================ -->
+                                
+                                <!-- Start Skills Tab -->
+                                <div class="tab-pane fade skill" id="skill" role="tabpanel" aria-labelledby="skill-tab">
+                                    <div class="skills">
+                                        <p class="progress-text">Html</p> <!-- Here You Can Edit The Name Of Skill -->
+                                        <div class="progress">
+                                            <div class="progress-bar" data-present="85%"></div> <!-- Here You Can Edit The Percentage -->
+                                        </div>
+                                        <p class="progress-text">Photoshop</p> <!-- Here You Can Edit The Name Of Skill -->
+                                        <div class="progress">
+                                            <div class="progress-bar" data-present="70%"></div> <!-- Here You Can Edit The Percentage -->
+                                        </div>
+                                        <p class="progress-text">Javascript</p> <!-- Here You Can Edit The Name Of Skill -->
+                                        <div class="progress">
+                                            <div class="progress-bar" data-present="60%"></div> <!-- Here You Can Edit The Percentage -->
+                                        </div>
+                                        <p class="progress-text">Php</p> <!-- Here You Can Edit The Name Of Skill -->
+                                        <div class="progress">
+                                            <div class="progress-bar" data-present="80%"></div> <!-- Here You Can Edit The Percentage -->
+                                        </div>
+                                    </div>
+                                    <a href="#" class="btn-manisa">Hire me</a>
+                                </div>
+                                <!-- End Skills Tab -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- End About -->
+        
+        
+        <!-- Start JOBS & EDUCATION -->
+        <section class="educ">
+            <div class="container">
+                <div class="education">
+                    <div class="row">
+                        <div class="col-lg col-md-12">
+                            <div class="title first-timeline">
+                                <h3>Formación</h3>
+                                <!-- Start Education Number 1 -->
+                                <div class="infos-educ">
+                                    <span class="roundtimeline"></span>
+                                    <div class="info-timeline">
+                                        <h5>Ingeniería Informática</h5>
+                                        <span class="date">09/2015 - actualidad</span>
+                                        <span> | </span>
+                                        <!--<a href="https://www.uclm.es/"> Universidad de Castilla-La Mancha </a>-->
+                                        <a href="https://www.uclm.es/"><span class="job">Universidad de Castilla-La Mancha</span></a>
+                                        <p>Grado bilingüe de Ingeniería Informática, Escuela Superior de Informática (CR)</p>
+                                        <span class="timeline-de"></span>
+                                    </div>
+                                </div>
+                                <!-- End Education Number 1 -->
+                                <!-- ====================== -->
+                                <!-- Star Education Number 2 -->
+                                <div class="infos-educ">
+                                    <span class="roundtimeline"></span>
+                                    <div class="info-timeline">
+                                        <h5>Bachillerato</h5>
+                                        <span class="date">09/2013 - 06/2015</span>
+                                        <span> | </span>
+                                        <span class="job">I.E.S. Alonso Quijano</span>
+                                        <p>Bachillerato modalidad Ciencias y Tecnología.<br> Argamasilla de Calatrava, Ciudad Real.</p>
+                                        <span class="timeline-de"></span>
+                                    </div>
+                                </div>
+                                <!-- End Education Number 2 -->
+                                <!-- ====================== -->
+                                <!-- Star Education Number 3 -->
+                                <div class="infos-educ">
+                                    <span class="roundtimeline"></span>
+                                    <div class="info-timeline">
+                                        <h5>B1 - Preliminary English Test</h5>
+                                        <span class="date">07/2015</span>
+                                        <span> | </span>
+                                        <a href="https://www.cambridgeenglish.org/es/exams-and-tests/preliminary/"><span class="job">Cambridge Exams</span></a>
+                                        <p></p>
+                                        <span class="timeline-de"></span>
+                                    </div>
+                                </div>
+                                <!-- End Education Number 3 -->
+                            </div>
+                        </div>
+                        <div class="col-lg col-md-12">
+                        	<h3>Competencias & Habilidades</h3>
+                        	<br>
+                            <div class="skillbar clearfix " data-percent="85%">
+                            	<div class="skillbar-title" style="background: #029D9B;"><span>Java</span></div>
+                            	<div class="skillbar-bar" style="background: #129e9b;"></div>
+                            	<div class="skill-bar-percent">85%</div>
+                            </div> <!-- End Skill Bar -->
+                            <br>
+                            <div class="skillbar clearfix " data-percent="65%">
+                            	<div class="skillbar-title" style="background: #029D9B;"><span>C#</span></div>
+                            	<div class="skillbar-bar" style="background: #129e9b;"></div>
+                            	<div class="skill-bar-percent">65%</div>
+                            </div> <!-- End Skill Bar -->
+                            <br>
+                            <div class="skillbar clearfix " data-percent="70%">
+                            	<div class="skillbar-title" style="background: #029D9B;"><span>HTML5</span></div>
+                            	<div class="skillbar-bar" style="background: #129e9b;"></div>
+                            	<div class="skill-bar-percent">70%</div>
+                            </div> <!-- End Skill Bar -->
+                            <br>
+                            <div class="skillbar clearfix " data-percent="75%">
+                            	<div class="skillbar-title" style="background: #029D9B;"><span>CSS</span></div>
+                            	<div class="skillbar-bar" style="background: #129e9b;"></div>
+                            	<div class="skill-bar-percent">75%</div>
+                            </div> <!-- End Skill Bar -->
+                            <br>
+                            <div class="skillbar clearfix " data-percent="70%">
+                            	<div class="skillbar-title" style="background: #029D9B;"><span>Android</span></div>
+                            	<div class="skillbar-bar" style="background: #129e9b;"></div>
+                            	<div class="skill-bar-percent">70%</div>
+                            </div> <!-- End Skill Bar -->
+                            <br>
+                            <div class="skillbar clearfix " data-percent="90%">
+                            	<div class="skillbar-title" style="background: #029D9B;"><span>Prestashop</span></div>
+                            	<div class="skillbar-bar" style="background: #129e9b;"></div>
+                            	<div class="skill-bar-percent">90%</div>
+                            </div> <!-- End Skill Bar -->
+                            <br>
+                            <div class="skillbar clearfix " data-percent="60%">
+                            	<div class="skillbar-title" style="background: #029D9B;"><span>Python</span></div>
+                            	<div class="skillbar-bar" style="background: #129e9b;"></div>
+                            	<div class="skill-bar-percent">60%</div>
+                            </div> <!-- End Skill Bar -->
+                            <br>
+                            <div class="skillbar clearfix " data-percent="60%">
+                            	<div class="skillbar-title" style="background: #029D9B;"><span>JavaScript</span></div>
+                            	<div class="skillbar-bar" style="background: #129e9b;"></div>
+                            	<div class="skill-bar-percent">60%</div>
+                            </div> <!-- End Skill Bar -->
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- End JOBS & EDUCATION  -->
+        
+        
+        <!-- Start Services -->
+        <section id="serv" class="serv text-center">
+            <div class="container">
+                <div class="title">
+                    <h2 class="text-uppercase">Habilidades personales</h2>
+                </div>
+                <div class="row">
+                    <!-- Start Service Number 1 -->
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="info-serv">
+                            <i class="fas fa-handshake" style="font-size:48px"></i>
+                            <h5>Responsabilidad</h5>
+                        </div>
+                    </div>
+                    <!-- End Service Number 1 -->
+                    <!-- ====================== -->
+                    <!-- Start Service Number 2 -->
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="info-serv">
+                            <i class="fas fa-clock" style="font-size:48px"></i>
+                            <h5>Dinámica</h5>
+                        </div>
+                    </div>
+                    <!-- End Service Number 2 -->
+                    <!-- ====================== -->
+                    <!-- Start Service Number 3 -->
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="info-serv">
+                            <i class="fas fa-business-time" style="font-size:48px"></i>
+                            <h5>Trabajadora</h5>
+                        </div>
+                    </div>
+                    <!-- End Service Number 3 -->
+                    <!-- ====================== -->
+                    <!-- Start Service Number 4 -->
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="info-serv last-info-serv">
+                            <i class="fas fa-graduation-cap" style="font-size:48px"></i>
+                            <h5>Aprendizaje</h5>
+                        </div>
+                    </div>
+                    <!-- End Service Number 4 -->
+                    <!-- ====================== -->
+                    <!-- Start Service Number 5 -->
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="info-serv last-info-serv">
+                        	<i class="fas fa-chart-pie" style="font-size:48px"></i>
+                        	<h5>Organización</h5>
+                        </div>
+                    </div>
+                    <!-- End Service Number 5 -->
+                    <!-- ====================== -->
+                    <!-- Start Service Number 6 -->
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="info-serv last-info-serv">
+                            <i class="fas fa-users" style="font-size:48px"></i>
+                            <h5>Trabajo en Equipo</h5>
+                        </div>
+                    </div>
+                    <!-- End Service Number 6 -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- End Services -->
+        
+        
+        <!-- Start Stat -->
+       <!-- <section class="stat text-center">
+            <div class="overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 col-xs-12 number">
+                            <i class="manisa-heart"></i>
+                            <span class="counter">1200</span>
+                            <p>Happy Client</p>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12 number">
+                            <i class="manisa-coffe"></i>
+                            <span class="counter">154</span>
+                            <p>Cup Of Coffee</p>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12 number">
+                            <i class="manisa-star"></i>
+                            <span class="counter">102</span>
+                            <p>Successful Projects</p>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12 number">
+                            <i class="manisa-cup"></i>
+                            <span class="counter">320</span>
+                            <p>Award Won</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        -->
+        <!-- End Stat -->     
+        
+        <!-- Start Client -->
+        <section id="client" class="client text-center">
+            <div class="overlay">
+            <div class="container">
+           		<p class="quote-phrase"><span class="quote-marks">"</span>
+            	 Tu trabajo va a llenar gran parte de tu vida, la única manera de estar realmente satisfecho es hacer lo que creas que es un gran trabajo y la única manera de hacerlo es amar lo que haces. Si no lo has encontrado aún, sigue buscando. Como con todos los asuntos del corazón, lo sabrás cuando lo encuentres.
+            	<span class="quote-marks">"</span>
+				</p>       
+            </div>
+            </div>
+        </section>
+        
+        <!-- End Client -->
+
+        <!-- Start Portfolio  -->
+        <section id="portfolio" class="portfolio text-center">
+            <div class="container">
+                <div class="title">
+                    <h2 class="text-uppercase">Portfolio</h2>
+                </div>
+                <div class="gallery">
+                    <div class="row">
+                        <!-- Start Image Number 1 -->
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="item marketing">
+                                <div class="over">
+                                    <div class="info-img">
+                                        <h4 class="pattaya">Baymax - Tamagotchi</h4>
+                                        <span>Juego creado en C# para la asignatura de Interacción Persona-Ordenador II</span>
+                                    </div>
+                                </div>
+                                <img src="images/portfolio/baymax.jpg" alt="imgPort1" class="img-fluid">
+                                        <!-- Here ^ You Can Change image And Up -->
+                            </div>
+                        </div>
+                        <!-- End Image Number 1 -->
+                        <!-- ===================== -->
+                        <!-- Start Image Number 2 -->
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="item graphic">
+                                <div class="over">
+                                    <div class="info-img">
+                                        <h4 class="pattaya">Web VivELA</h4>
+                                        <span>Desarrollo de página web usando Prestashop para la asignatura Comercio Electrónico</span>
+                                    </div>
+                                    <a href="http://julio.quijost.com/vivela1.6/es/" target="_blank">
+                                            <!-- ^ And Here -->
+                                        <i class="fa fa-arrows-alt"></i>
+                                    </a>
+                                </div>
+                                <img src="images/portfolio/vivela.jpg" alt="imgPort1" class="img-fluid">
+                                        <!-- Here ^ You Can Change image And Up -->
+                            </div>
+                        </div>
+                        <!-- End Image Number 2 -->
+                        <!-- ===================== -->
+                        <!-- Start Image Number 3 -->
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="item web">
+                                <div class="over">
+                                    <div class="info-img">
+                                        <h4 class="pattaya">Player & Lyrics</h4>
+                                        <span>App Android para la asignatura Multimedia</span>
+                                    </div>
+                                </div>
+                                <img src="images/portfolio/player3.png" alt="imgPort1" class="img-fluid">
+                                        <!-- Here ^ You Can Change image And Up -->
+                            </div>
+                        </div>
+                        <!-- End Image Number 3 -->
+                        <!-- ===================== -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- End Portfolio -->
+        
+        
+        <!-- Start Contact -->
+        <section id="contact" class="contact text-center">
+            <div class="container">
+                <div class="title">
+                    <h2 class="text-uppercase">¡Ponte en Contacto!</h2>
+                </div>
+                <div class="contact-content">
+                    <div class="row" style="padding-bottom: 30px;">
+                        <div class="col-lg col-sm-4">
+                            <div class="email">
+                                <i class="fas fa-envelope"></i>
+                                <span>Amanda.Sanchez@alu.uclm.es</span>
+                            </div>
+                        </div>
+                        <div class="col-lg col-sm-4">
+                            <div class="phone">
+                                <i class="fas fa-mobile"></i>
+                                <span>658 12 20 93</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- End Contact -->
+        
+        <section id="client1" class="client1 text-center">
+            <div class="overlay">
+            <div class="container">
+           		<p class="quote-phrase"><span class="quote-marks">"</span>
+            	 Tiefe Brunnen muss man graben, wenn man klares Wasser will.
+            	<span class="quote-marks">"</span>
+				</p>       
+            </div>
+            </div>
+        </section>
+        
+        <!-- Start Footer -->
+        
+        <footer class="text-center">
+            <div class="footer-content">
+                <div class="social-media-footer">
+                    <a href="https://www.facebook.com/amanda.snchzgrc" target="_blank"><i class="fab fa-facebook-f"></i></a> 
+                    <a href="https://www.linkedin.com/in/amanda-sanchez-garcia/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/AmandaSanchez21" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="copyright">
+                    <p style="color:#0a0909">Amanda Sánchez García © Copyright 2018. </p>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- End Footer -->
+        
+        <!-- Start SrollTop -->
+        
+        <div class="scrolltop">
+            <i class="fa fa-angle-double-up"></i>
+        </div>
+        
+        <!-- End SrollTop -->
+        
+        <!-- Start Loading -->
+        
+        <div class="loading-overlay">
+            <div class="sk-cube-grid">
+              <div class="sk-cube sk-cube1"></div>
+              <div class="sk-cube sk-cube2"></div>
+              <div class="sk-cube sk-cube3"></div>
+              <div class="sk-cube sk-cube4"></div>
+              <div class="sk-cube sk-cube5"></div>
+              <div class="sk-cube sk-cube6"></div>
+              <div class="sk-cube sk-cube7"></div>
+              <div class="sk-cube sk-cube8"></div>
+              <div class="sk-cube sk-cube9"></div>
+            </div>
+        </div>
+        
+        <!-- End Loading -->
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/lightbox.min.js"></script>
+        <script src="js/typed.js"></script>
+        <script src="js/slick.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+        <script src="js/jquery.counterup.min.js"></script>
+        <script src="js/custom.js"></script>
+    </body>
+</html>
