@@ -311,7 +311,6 @@ a .bg_logo_light {
   font-size: 21px;
   color: #fff; }
 
-/* Start Slider Background */
 .header .slider {
   height: 100vh; }
   .header .slider .overlay-home {
@@ -321,19 +320,16 @@ a .bg_logo_light {
     background-color: rgba(51, 51, 51, 0.5); }
   .header .slider .slider1 {
     background-image: url(../images/background-slider1.jpg);
-    /* Here You Can Edit the image of the Slider 1  */
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh; }
   .header .slider .slider2 {
     background-image: url(../images/background-slider2.jpg);
-    /* Here You Can Edit the image of the Slider 2  */
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh; }
   .header .slider .slider3 {
     background-image: url(../images/background-slider3.jpg);
-    /* Here You Can Edit the image of the Slider 3  */
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh; }
@@ -371,7 +367,6 @@ a .bg_logo_light {
 /* Start Paralax Background */
 .header-paralax {
   background-image: url(../images/background-paralax.jpg);
-  /* Here You Can Edit the image of Header (Background Particles)  */
   background-size: cover;
   background-repeat: no-repeat; }
 
@@ -379,7 +374,6 @@ a .bg_logo_light {
 /* Start Particles Background */
 .header .particles {
   background-image: url(../images/background-particles.jpg);
-  /* Here You Can Edit the image of Header (Background Particles)  */
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -419,7 +413,6 @@ a .bg_logo_light {
 ===========================================================*/
 .about .about-img {
   background-image: url(../images/about1.jpg);
-  /* Here You can edit your personal image */
   height: 350px;
   width: 100%;
   background-attachment: fixed;
@@ -774,12 +767,6 @@ a .bg_logo_light {
   100% {
     opacity: 1;
     height: 85%; } }
-  /*.open-timeline:after {
-    animation-name: firstimeline;
-    animation-duration: 1500ms;
-    animation-delay: 300ms;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards; }*/
 
 /*==========================================================
 
@@ -1026,13 +1013,13 @@ a .bg_logo_light {
           right: 30px; }
   .testim .slide1 {
     background-image: url(../images/testim1.jpg);
-    /* image for testimonial 1 */ }
+    }
   .testim .slide2 {
     background-image: url(../images/testim2.jpg);
-    /* image for testimonial 2 */ }
+     }
   .testim .slide3 {
     background-image: url(../images/testim3.jpg);
-    /* image for testimonial 3 */ }
+     }
 
 /*==========================================================
 
@@ -1291,7 +1278,7 @@ a .bg_logo_light {
   -webkit-filter: grayscale(99%);
   /* Chrome 19+ & Safari 6+ */
   -webkit-backface-visibility: hidden;
-  /* Fix for transition flickering */ }
+   }
 
 .scrolloff {
   pointer-events: none; }
