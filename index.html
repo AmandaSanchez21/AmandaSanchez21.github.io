@@ -6,12 +6,10 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Me llamo Amanda Sánchez y esta es mi página web. Aquí puedes consultar mi CV, así como los proyectos que voy realizando.">
-  	<meta name="keywords" content="Curriculum Vitae, Curriculum, Amanda, Informática, Amanda Sanchez">
-  	<meta name="author" content="Amanda Sanchez">
+        <link rel="shortcut icon" href="images/favicon.ico">
         
         <!-- title -->
-        <title>Amanda Sanchez</title>
+        <title>Amanda Sánchez</title>
         
         <!-- stylesheet -->
         <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -29,57 +27,14 @@
         <!-- google Fonts -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Pattaya|Poppins:300,300i,400" rel="stylesheet">
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130420692-1"></script>
-	<script>
- 	   window.dataLayer = window.dataLayer || [];
-  	   function gtag(){dataLayer.push(arguments);}
-  	   gtag('js', new Date());
 
-  	   gtag('config', 'UA-130420692-1');
-	</script>
         
         <script>
-            // Ajax function
             
             function _(id) {
 
                 return document.getElementById(id);
 
-            }
-
-            function submitForm() {
-
-                _("btn").disabled = true;
-                _("status").innerHTML = 'please wait ...';
-
-                var formdata = new FormData(),
-                    ajax = new XMLHttpRequest();
-
-                formdata.append("name", _("name").value);
-                formdata.append("email", _("email").value);
-                formdata.append("phone", _("phone").value);
-                formdata.append("msg", _("msg").value);
-
-                ajax.open("POST", "contact.php");
-                ajax.onreadystatechange = function () {
-
-                    if (ajax.readyState === 4 && ajax.status === 200) {
-
-                        if (ajax.responseText === "success") {
-
-                            _("my_form").innerHTML = '<h2>Thanks ' + _("name").value + ',<br> <br> your message has been sent.</h2>';
-
-                        } else {
-
-                            _("status").innerHTML = ajax.responseText;
-                            _("btn").disabled = false;
-
-                        }
-                    }
-                };
-
-                ajax.send(formdata);
             }
         </script>
     </head>
@@ -123,21 +78,15 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#serv" data-value="serv">
+                            <a href="#educ" data-value="educ">
                             <i class="manisa-layers" hidden></i>
-                                <span class="name-menu">Servicios</span>
+                                <span class="name-menu">Experiencia & Skills</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#portfolio" data-value="portfolio">
+                            <a href="#serv" data-value="serv">
                             <i class="manisa-picture" hidden></i>
-                                <span class="name-menu">Portfolio</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#blog" data-value="blog">
-                            <i class="manisa-note" hidden></i>
-                                <span class="name-menu">Blog</span>
+                                <span class="name-menu">Habilidades Personales</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -169,7 +118,7 @@
             <div class="overlay"></div>
             <div class="title">
                 <h1> <span class="pattaya">Amanda Sánchez García</span></h1>
-                <p class="type"></p> 
+                <p class="type"></p>  <!-- You Can Edit the title on the custom.js File -->
                	<nav class="nav_class" style="margin-top: 30px;">
                		<ul id="social" style="display: -webkit-inline-box;">
                			<li style="color: white;margin-right: 20px;margin-left: 20px;"><a href="https://www.facebook.com/amanda.snchzgrc" class="fab fa-facebook-f fa-2x" style="color: white; border:none;"><span class="label">Facebook</span></a></li>
@@ -196,6 +145,7 @@
                 <div class="row">
                     <div class="col-md-12 col-lg text-center">
                         <div class="about-img"></div> 
+                        <!-- go to main.scss file to edit personal image -->
                     </div>
                     <div class="col-md-12 col-lg">
                         <div class="tabs-about">
@@ -221,6 +171,16 @@
                                 </li>
                                 <!-- End Profile Title Tab -->
                                 
+                                <!-- ================ -->
+                                
+                                <!-- Start Skills Title Tab -->
+                               <!-- <li class="nav-item">
+                                    <a class="nav-link" id="skill-tab" data-toggle="tab" href="#skill" role="tab" aria-controls="skill">
+                                        <i class="material-icons">school</i>
+                                        <span>Education</span>
+                                    </a>
+                                </li>
+                                <!-- End Skills Title Tab -->
                             </ul>
                             <div class="tab-content" id="myTabContent">
                                 
@@ -237,12 +197,11 @@
                                 
                                 <!-- Start Profile Tab -->
                                 <div class="tab-pane fade text-left profile" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                    <h6><span class="title-info">Nombre :</span><span>Amanda Sánchez García</span></h6>
+                                    <h6><span class="title-info">Nombre :</span><span>Amanda Sánchez García</span></h6> 
                                     <h6><span class="title-info">Email : </span><span>Amanda.Sanchez@alu.uclm.es</span></h6> 
                                     <h6><span class="title-info">Fecha de nacimiento : </span><span>02-09-1997</span></h6> 
                                     <h6><span class="title-info">Teléfono : </span><span>658 12 20 93</span></h6> 
-				    <h6><span class="title-info">Web : </span><span>amandasanchez21.github.io</span></h6>
-                                    <!--<a href="#" class="btn-manisa">Download Resume</a>-->
+                                    <h6><span class="title-info">Web : </span><span>amandasanchez21.github.io</span></h6> 
                                 </div>
                                 <!-- End Profile Tab -->
                                 
@@ -257,18 +216,17 @@
                                         </div>
                                         <p class="progress-text">Photoshop</p> 
                                         <div class="progress">
-                                            <div class="progress-bar" data-present="70%"></div>
+                                            <div class="progress-bar" data-present="70%"></div> 
                                         </div>
                                         <p class="progress-text">Javascript</p> 
                                         <div class="progress">
                                             <div class="progress-bar" data-present="60%"></div> 
                                         </div>
-                                        <p class="progress-text">Php</p> 
+                                        <p class="progress-text">Java</p> 
                                         <div class="progress">
                                             <div class="progress-bar" data-present="80%"></div> 
                                         </div>
                                     </div>
-                                    <a href="#" class="btn-manisa">Hire me</a>
                                 </div>
                                 <!-- End Skills Tab -->
                             </div>
@@ -282,13 +240,25 @@
         
         
         <!-- Start JOBS & EDUCATION -->
-        <section class="educ">
+        <section id="educ" class="educ">
             <div class="container">
                 <div class="education">
                     <div class="row">
                         <div class="col-lg col-md-12">
                             <div class="title first-timeline">
-                                <h3>Formación</h3>
+                                <h3>Formación y Experiencia</h3>
+                                <div class="infos-educ">
+                                    <span class="roundtimeline"></span>
+                                    <div class="info-timeline">
+                                        <h5>Informática El Corte Inglés SA - FORTE</h5>
+                                        <span class="date">02/2019 - actualidad</span>
+                                        <span> | </span>
+                                        <!--<a href="https://www.uclm.es/"> Universidad de Castilla-La Mancha </a>-->
+                                        <a href="https://www.iecisa.com/es/index.html"><span class="job">Informática El Corte Inglés SA</span></a>
+                                        <p>Desarrollador Web, participando en el convenio FORTE, mediante el cual la Escuela Superior de Informática (CR) y la empresa mencionada permite elaborar tanto las prácticas en empresa como el Trabajo de Fin de Grado dentro de un equipo de trabajo y participando en un proyecto real.</p>
+                                        <span class="timeline-de"></span>
+                                    </div>
+                                </div>
                                 <!-- Start Education Number 1 -->
                                 <div class="infos-educ">
                                     <span class="roundtimeline"></span>
@@ -296,8 +266,9 @@
                                         <h5>Ingeniería Informática</h5>
                                         <span class="date">09/2015 - actualidad</span>
                                         <span> | </span>
+                                        <!--<a href="https://www.uclm.es/"> Universidad de Castilla-La Mancha </a>-->
                                         <a href="https://www.uclm.es/"><span class="job">Universidad de Castilla-La Mancha</span></a>
-                                        <p>Grado bilingüe de Ingeniería Informática, Escuela Superior de Informática (CR)</p>
+                                        <p>Grado bilingüe de Ingeniería Informática (Tecnologías de la Información), Escuela Superior de Informática (CR)</p>
                                         <span class="timeline-de"></span>
                                     </div>
                                 </div>
@@ -335,7 +306,7 @@
                         <div class="col-lg col-md-12">
                         	<h3>Competencias & Habilidades</h3>
                         	<br>
-                            <div class="skillbar clearfix " data-percent="85%">
+                            <div class="skillbar clearfix" id="f-skillbar" data-percent="85%">
                             	<div class="skillbar-title" style="background: #029D9B;"><span>Java</span></div>
                             	<div class="skillbar-bar" style="background: #129e9b;"></div>
                             	<div class="skill-bar-percent">85%</div>
@@ -359,6 +330,18 @@
                             	<div class="skill-bar-percent">75%</div>
                             </div> <!-- End Skill Bar -->
                             <br>
+                            <div class="skillbar clearfix " data-percent="60%">
+                            	<div class="skillbar-title" style="background: #029D9B;"><span>AngularJS</span></div>
+                            	<div class="skillbar-bar" style="background: #129e9b;"></div>
+                            	<div class="skill-bar-percent">60%</div>
+                            </div> <!-- End Skill Bar -->
+                            <br>
+                            <div class="skillbar clearfix " data-percent="80%">
+                            	<div class="skillbar-title" style="background: #029D9B;"><span>Angular5</span></div>
+                            	<div class="skillbar-bar" style="background: #129e9b;"></div>
+                            	<div class="skill-bar-percent">80%</div>
+                            </div> <!-- End Skill Bar -->
+                            <br>
                             <div class="skillbar clearfix " data-percent="70%">
                             	<div class="skillbar-title" style="background: #029D9B;"><span>Android</span></div>
                             	<div class="skillbar-bar" style="background: #129e9b;"></div>
@@ -375,6 +358,12 @@
                             	<div class="skillbar-title" style="background: #029D9B;"><span>Python</span></div>
                             	<div class="skillbar-bar" style="background: #129e9b;"></div>
                             	<div class="skill-bar-percent">60%</div>
+                            </div> <!-- End Skill Bar -->
+                            <br>
+                            <div class="skillbar clearfix " data-percent="70%">
+                            	<div class="skillbar-title" style="background: #029D9B;"><span>TypeScript</span></div>
+                            	<div class="skillbar-bar" style="background: #129e9b;"></div>
+                            	<div class="skill-bar-percent">70%</div>
                             </div> <!-- End Skill Bar -->
                             <br>
                             <div class="skillbar clearfix " data-percent="60%">
@@ -430,7 +419,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="info-serv last-info-serv">
                             <i class="fas fa-graduation-cap" style="font-size:48px"></i>
-                            <h5>Aprendizaje</h5>
+                            <h5>Autodidacta</h5>
                         </div>
                     </div>
                     <!-- End Service Number 4 -->
@@ -521,6 +510,9 @@
                                         <h4 class="pattaya">Baymax - Tamagotchi</h4>
                                         <span>Juego creado en C# para la asignatura de Interacción Persona-Ordenador II</span>
                                     </div>
+                                    <a href="https://github.com/AmandaSanchez21/IPO-II" target="_blank">
+                                        <i class="fa fa-arrows-alt"></i>
+                                    </a>
                                 </div>
                                 <img src="images/portfolio/baymax.jpg" alt="imgPort1" class="img-fluid">
                             </div>
@@ -535,7 +527,7 @@
                                         <h4 class="pattaya">Web VivELA</h4>
                                         <span>Desarrollo de página web usando Prestashop para la asignatura Comercio Electrónico</span>
                                     </div>
-                                    <a href="http://julio.quijost.com/vivela1.6/es/" target="_blank">
+                                    <a href="https://www.asociacionvivela.es/es/" target="_blank">
                                         <i class="fa fa-arrows-alt"></i>
                                     </a>
                                 </div>
@@ -552,6 +544,9 @@
                                         <h4 class="pattaya">Player & Lyrics</h4>
                                         <span>App Android para la asignatura Multimedia</span>
                                     </div>
+                                     <a href="https://github.com/AmandaSanchez21/Reproductor-Multimedia" target="_blank">
+                                        <i class="fa fa-arrows-alt"></i>
+                                    </a>
                                 </div>
                                 <img src="images/portfolio/player3.png" alt="imgPort1" class="img-fluid">
                             </div>
@@ -656,7 +651,5 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
         <script src="js/jquery.counterup.min.js"></script>
         <script src="js/custom.js"></script>
-	    
-
     </body>
 </html>
